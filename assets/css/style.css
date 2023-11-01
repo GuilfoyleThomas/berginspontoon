@@ -1,0 +1,86 @@
+/* CSS for index.html (Navigation Page) */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(/assets/images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100vh;
+}
+
+/* Overlay to make the background darker */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control darkness (0.5 is semi-transparent) */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 10px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Media query to center the navigation and heading on mobile devices */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+
+
+
