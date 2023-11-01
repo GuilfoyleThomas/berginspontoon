@@ -1,8 +1,8 @@
-/* CSS for index.html (Navigation Page) */
+/* Common styles for both index.html and weekly_draw.html */
 body {
     margin: 0;
     padding: 0;
-    background-image: url(/assets/images/background.jpg);
+    background-image: url(/assets/images/background.jpg); /* Replace with your image URL */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,17 +11,20 @@ body {
     height: 100vh;
 }
 
-/* Overlay to make the background darker */
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control darkness (0.5 is semi-transparent) */
-    z-index: -1; /* Place the overlay behind the content */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay color with 50% opacity */
+    z-index: -1;
 }
+
 
 header {
     text-align: center;
@@ -29,6 +32,10 @@ header {
 }
 
 h1 {
+    color: #fff;
+}
+
+h2 {
     color: #fff;
 }
 
@@ -52,21 +59,72 @@ nav a {
     border-radius: 5px;
 }
 
-/* Media query to center the navigation and heading on mobile devices */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Ensure it's on top of other content */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Back button styles */
+.back-button {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Media query for mobile */
 @media (max-width: 768px) {
-    header {
+    /* header.h1, header.a {
         text-align: center;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
+    } */
+
+    #home-navigation {
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
 
     h1 {
         color: #fff;
-        margin: 0;
+        font-size: 24px;
+        margin: 10px 0; /* Adjust the top margin of h1 to control spacing */
     }
 
     nav ul {
@@ -79,8 +137,18 @@ nav a {
         display: block;
         margin: 10px auto;
     }
+
+    table {
+        width: 80%;
+        margin: 20px auto; /* Center the table horizontally on mobile */
+    }
+
+    h2 {
+        text-align: center; /* Center the table heading on mobile */
+    }
 }
 
-
-
-
+    .back-button {
+        top: 10px;
+        left: 10px;
+    }
